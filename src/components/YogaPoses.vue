@@ -1,84 +1,50 @@
 <template>
   <div class="yoga">
-    <h2>Yoga Sequence</h2>
-    <column>
-      <p>enter your sequence below in the following format</p>
+    <p>enter your sequence below in the following format</p>
+    <div class="tutorial">
+      Use any of the following aliases:
+      <div class="tutorial-list">
+        <div v-for="pose in poses" v-bind:key="pose.name" class="aliases-item">
+          <div class="name">{{pose.name}}</div>
+          <div class="aliases">{{pose.aliases}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="top">
       <textarea id="input"></textarea>
       <button id="convert-button" v-on:click="clickHandler()">Convert</button>
-    </column>
-    <column>
-      <p>...and a yoga sequence diagram will be generated for you</p>
+    </div>
+    <p>...and a yoga sequence diagram will be generated for you</p>
 
-      <ol>
-        <li v-for="pose in poses" class="pose-card" v-bind:key="pose.name">
-          <div>{{pose.name}}</div>
+    <div class="bottom">
+      <div class="pose-sequence-list">
+        <div v-for="pose in poses" class="pose-card" v-bind:key="pose.name">
           <img :src="pose.imageUrl" alt="pose image" />
-        </li>
-      </ol>
-    </column>
+          <div>{{pose.name}}</div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-const testPosesArray = [
-  {
-    name: "Downward Facing Dog",
-    aliases: "DFD",
-    imageUrl:
-      "https://github.com/azitowolf/yogaposes/blob/master/DFD.png?raw=true"
-  },
-  {
-    name: "Mountain",
-    aliases: "MTN",
-    imageUrl:
-      "https://github.com/azitowolf/yogaposes/blob/master/mountain.png?raw=true"
-  },
-  {
-    name: "Chattaranga",
-    aliases: "CHAT",
-    imageUrl:
-      "https://github.com/azitowolf/yogaposes/blob/master/chattaranga.png?raw=true"
-  },
-  {
-    name: "Upward Facing Dog",
-    aliases: "UFD",
-    imageUrl:
-      "https://github.com/azitowolf/yogaposes/blob/master/upward_facing_dog.png?raw=true"
-  },
-  {
-    name: "Half Moon",
-    aliases: "HFMN",
-    imageUrl:
-      "https://github.com/azitowolf/yogaposes/blob/master/half_moon.png?raw=true"
-  }
-];
-
 export default {
   name: "YogaPoses",
-  props: {
-    poses: [
-      {
-        name: "Downward Facing Dog",
-        aliases: "DFD",
-        imageUrl:
-          "https://github.com/azitowolf/yogaposes/blob/master/DFD.png?raw=true"
-      }
-    ]
-  },
+  props: { poses: { type: Array } },
   methods: {
-    toggle: function(todo) {
-      todo.done = !todo.done;
+    removeBullets: function(line) {
+      return line.replace(/^\s*(?:[\dA-Z]+\.|[a-z]\)|•)\s+/, "");
     },
     clickHandler: function() {
       const sequence = document.getElementById("input");
       const linesArray = sequence.value.split("\n");
       console.log(linesArray);
-      this.poses = [];
+      // this.poses = [];
       console.log("--- entering loop ---");
       linesArray.forEach(line => {
         console.log(line);
-        let result = testPosesArray.find(
-          pose => pose.aliases.trim() === line.trim()
+        let result = this.poses.find(
+          pose => pose.aliases.indexOf(this.removeBullets(line.trim())) >= 0
         );
         console.log(result);
         if (result) this.poses.push(result);
@@ -91,38 +57,57 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .yoga {
-  background: #fff;
-  border-radius: 4px;
-  padding: 20px;
-  transition: all 0.2s;
+  flex-direction: column;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: stretch;
+}
+.tutorial-list {
+  display:flex;
+  flex-direction: column;
+  }
+
+.aliases-item {
+  flex-direction: row;
+}
+.name, 
+.aliases {  
+  flex: 1 1 50%;
+}
+
+.top,
+.bottom {
+  font-size: 16px;
+  font-family: monospace;
+  flex: 1 1 100%;
+  margin: 8px;
+  padding: 8px;
+}
+
+#input {
+  height: 100%;
+  width: 100%;
+}
+
+.pose-sequence-list {
   display: flex;
   flex-direction: row;
 }
 
-li {
-  margin: 8px 0;
-}
-
-li img {
-  height: 100px;
-  width: 100px;
+.pose-card {
+  border: 1px solid black;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  vertical-align: center;
 }
 
 h2 {
   font-weight: bold;
   margin-bottom: 15px;
-}
-
-column {
-  width: 50%;
-}
-
-.pose-card {
-  border: 2px solid black;
-}
-
-#input {
-  height: 500px;
-  width: 150p;
 }
 </style>
