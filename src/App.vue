@@ -1,25 +1,27 @@
 <template>
   <div id="app">
     <h2>Yoga Sequencer</h2>
-    <YogaPoses 
-    msg="Welcome to Your Vue.js App" 
-    :poses="poses" 
-  />
+    <h4>About</h4>
+    <YogaTutorial :poses="poses" />
+    <YogaPoses :poses="poses" />
   </div>
 </template>
 
 <script>
 import YogaPoses from './components/YogaPoses.vue'
+import YogaTutorial from './components/YogaTutorial.vue'
 
 const posesArray = [
   {
     id: 1,
     name: "Downward Facing Dog",
+    sanscrit: "Adho Mukha Svansana",
+    chakras: ["Vishuddha"],
     aliases: [
-      "DFD",
-      "Down Dog",
-      "Downward Facing Dog",
-      "Dog"
+      "dfd",
+      "down dog",
+      "downward facing dog",
+      "dog"
       ],
     imageUrl:
       "https://github.com/azitowolf/yogaposes/blob/master/DFD.png?raw=true"
@@ -27,68 +29,33 @@ const posesArray = [
   {
     id: 2,
     name: "Mountain",
-    aliases: ["Mountain", "MTN", "Mount"],
+    sanscrit: "Tadasana",
+    aliases: ["mountain", "mtn", "mount"],
     imageUrl:
       "https://github.com/azitowolf/yogaposes/blob/master/mountain.png?raw=true"
   },
   {
     id: 3,
     name: "Chattaranga",
-    aliases: ["Chattaranga", "CHAT"],
+        sanscrit: "Urdhva Mukha Svansana",
+        chakras: [""],
+
+    aliases: ["Chattaranga", "chat"],
     imageUrl:
       "https://github.com/azitowolf/yogaposes/blob/master/chattaranga.png?raw=true"
   },
   {
     id: 4,
     name: "Upward Facing Dog",
-    aliases: ["Upward Facing Dog", "UFD"],
+    sanscrit: "Urdhva Mukha Svansana",
+    aliases: ["upward facing dog", "ufd"],
     imageUrl:
       "https://github.com/azitowolf/yogaposes/blob/master/upward_facing_dog.png?raw=true"
   },
   {
     id: 5,
     name: "Half Moon",
-    aliases: ["Half Moon", "HFMN"],
-    imageUrl:
-      "https://github.com/azitowolf/yogaposes/blob/master/half_moon.png?raw=true"
-  },
-    {
-    id: 1,
-    name: "Downward Facing Dog",
-    aliases: [
-      "DFD",
-      "Down Dog",
-      "Downward Facing Dog",
-      "Dog"
-      ],
-    imageUrl:
-      "https://github.com/azitowolf/yogaposes/blob/master/DFD.png?raw=true"
-  },
-  {
-    id: 2,
-    name: "Mountain",
-    aliases: ["Mountain", "MTN", "Mount"],
-    imageUrl:
-      "https://github.com/azitowolf/yogaposes/blob/master/mountain.png?raw=true"
-  },
-  {
-    id: 3,
-    name: "Chattaranga",
-    aliases: ["Chattaranga", "CHAT"],
-    imageUrl:
-      "https://github.com/azitowolf/yogaposes/blob/master/chattaranga.png?raw=true"
-  },
-  {
-    id: 4,
-    name: "Upward Facing Dog",
-    aliases: ["Upward Facing Dog", "UFD"],
-    imageUrl:
-      "https://github.com/azitowolf/yogaposes/blob/master/upward_facing_dog.png?raw=true"
-  },
-  {
-    id: 5,
-    name: "Half Moon",
-    aliases: ["Half Moon", "HFMN"],
+    aliases: ["half moon", "hfmn"],
     imageUrl:
       "https://github.com/azitowolf/yogaposes/blob/master/half_moon.png?raw=true"
   }
@@ -97,6 +64,7 @@ const posesArray = [
 export default {
   name: 'App',
   components: {
+    YogaTutorial,
     YogaPoses
   },
   data: function () {

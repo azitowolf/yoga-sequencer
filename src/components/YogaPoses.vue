@@ -1,24 +1,17 @@
 <template>
   <div class="yoga">
-    <p>enter your sequence below in the following format</p>
-    <div class="tutorial">
-      Use any of the following aliases:
-      <div class="tutorial-list">
-        <div v-for="pose in poses" v-bind:key="pose.name" class="aliases-item">
-          <div class="name">{{pose.name}}</div>
-          <div class="aliases">{{pose.aliases}}</div>
-        </div>
-      </div>
-    </div>
+    <p>Enter your sequence below in the following format</p>
     <div class="top">
-      <textarea id="input"></textarea>
-      <button id="convert-button" v-on:click="clickHandler()">Convert</button>
+      <textarea v-model="poseInput" id="input"></textarea>
+      <button id="convert-button" v-on:click="convertToPoses()">Convert</button>
     </div>
-    <p>...and a yoga sequence diagram will be generated for you</p>
-
+    <p>...and a yoga sequence diagram will be generated for you below</p>
+    <p>try a demo set 
+      <button v-on:click="setDemo()">Suriya A</button>
+    </p>
     <div class="bottom">
       <div class="pose-sequence-list">
-        <div v-for="pose in poses" class="pose-card" v-bind:key="pose.name">
+        <div v-for="pose in outputPoses" class="pose-card" v-bind:key="pose.id">
           <img :src="pose.imageUrl" alt="pose image" />
           <div>{{pose.name}}</div>
         </div>
@@ -30,24 +23,80 @@
 <script>
 export default {
   name: "YogaPoses",
-  props: { poses: { type: Array } },
+  data: function() {
+    return {
+      outputPoses: [],
+      poseInput: ""
+    };
+  },
+  props: {
+    poses: {
+      type: Array
+    }
+  },
+  created: function() {
+    console.log("setting poses to blank");
+    console.log("--------------");
+    this.outputPoses = [];
+
+    console.log("rendering the yoga component");
+    console.log("--------------");
+  },
   methods: {
-    removeBullets: function(line) {
-      return line.replace(/^\s*(?:[\dA-Z]+\.|[a-z]\)|•)\s+/, "");
+    objectify: function(pose) {
+      //generate an id
+      let randomID = function() {
+        return (
+          "_" +
+          Math.random()
+            .toString(36)
+            .substr(2, 9)
+        );
+      };
+      // apply it to the FE so that vue can use it
+      return { ...pose, id: randomID() };
     },
-    clickHandler: function() {
-      const sequence = document.getElementById("input");
-      const linesArray = sequence.value.split("\n");
+    cleanString: function(line) {
+      const withoutBulletsOrSpaces = line
+        .trim()
+        .toLowerCase()
+        .replace(/^\s*(?:[\dA-Z]+\.|[a-z]\)|•)\s+/, "");
+      return withoutBulletsOrSpaces;
+    },
+    setDemo: function() {
+      const demoArray = [
+        {
+          id: 2,
+          name: "Mountain",
+          aliases: ["mountain", "mtn", "mount"],
+          imageUrl:
+            "https://github.com/azitowolf/yogaposes/blob/master/mountain.png?raw=true"
+        },
+        {
+          id: 3,
+          name: "Chattaranga",
+          aliases: ["Chattaranga", "chat"],
+          imageUrl:
+            "https://github.com/azitowolf/yogaposes/blob/master/chattaranga.png?raw=true"
+        }
+      ];
+      this.outputPoses = [this.objectify(demoArray[0]), this.objectify(demoArray[1])];
+      this.poseInput = demoArray[0].name + '\n' + demoArray[1].name  
+    },
+    convertToPoses: function() {
+      const sequence = document.getElementById("input").value;
+      const linesArray = sequence.split("\n");
       console.log(linesArray);
-      // this.poses = [];
+      this.outputPoses = [];
       console.log("--- entering loop ---");
       linesArray.forEach(line => {
-        console.log(line);
+        console.log(this.cleanString(line), this.poses);
         let result = this.poses.find(
-          pose => pose.aliases.indexOf(this.removeBullets(line.trim())) >= 0
+          // find the correct pose in pose array
+          pose => pose.aliases.indexOf(this.cleanString(line)) >= 0
         );
         console.log(result);
-        if (result) this.poses.push(result);
+        if (result) this.outputPoses.push(this.objectify(result));
       });
     }
   }
@@ -66,15 +115,15 @@ export default {
   align-items: stretch;
 }
 .tutorial-list {
-  display:flex;
+  display: flex;
   flex-direction: column;
-  }
+}
 
 .aliases-item {
   flex-direction: row;
 }
-.name, 
-.aliases {  
+.name,
+.aliases {
   flex: 1 1 50%;
 }
 
@@ -89,7 +138,7 @@ export default {
 
 #input {
   height: 100%;
-  width: 100%;
+  width: 50%;
 }
 
 .pose-sequence-list {
