@@ -1,8 +1,8 @@
 <template>
-  <div class="yoga">
+  <div class="yoga-poses-component">
     <p>Enter your sequence below in the following format</p>
     <div class="top">
-      <textarea v-model="poseInput" id="input"></textarea>
+      <textarea v-model="poseInput" id="input"  v-on:keyup.13="convertToPoses()"></textarea>
       <button id="convert-button" v-on:click="convertToPoses()">Convert</button>
     </div>
     <p>...and a yoga sequence diagram will be generated for you below</p>

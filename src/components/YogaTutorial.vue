@@ -1,5 +1,5 @@
 <template>
-  <div class="yoga">
+  <div class="yoga-tutorial-component">
     <p>Enter your sequence below in the following format</p>
     <div class="tutorial">
       Use any of the following aliases:
@@ -35,14 +35,14 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.yoga {
+.yoga-tutorial-component {
   flex-direction: column;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   display: flex;
-  align-items: stretch;
+  align-items: left;
 }
 .tutorial-list {
   display: flex;
