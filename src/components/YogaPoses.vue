@@ -7,7 +7,7 @@
     </div>
     <p>...and a yoga sequence diagram will be generated for you below</p>
     <p>try a demo set 
-      <button v-on:click="setDemo()">Suriya A</button>
+      <button v-on:click="setDemo(['mtn', 'mtn'])">Suriya A</button>
     </p>
     <div class="bottom">
       <div class="pose-sequence-list">
@@ -63,29 +63,13 @@ export default {
         .replace(/^\s*(?:[\dA-Z]+\.|[a-z]\)|•)\s+/, "");
       return withoutBulletsOrSpaces;
     },
-    setDemo: function() {
-      const demoArray = [
-        {
-          id: 2,
-          name: "Mountain",
-          aliases: ["mountain", "mtn", "mount"],
-          imageUrl:
-            "https://github.com/azitowolf/yogaposes/blob/master/mountain.png?raw=true"
-        },
-        {
-          id: 3,
-          name: "Chattaranga",
-          aliases: ["Chattaranga", "chat"],
-          imageUrl:
-            "https://github.com/azitowolf/yogaposes/blob/master/chattaranga.png?raw=true"
-        }
-      ];
-      this.outputPoses = [this.objectify(demoArray[0]), this.objectify(demoArray[1])];
-      this.poseInput = demoArray[0].name + '\n' + demoArray[1].name  
+    setDemo: function(poseArray = []) {
+      this.poseInput = poseArray.reduce((accumulator, pose) => { return accumulator + pose + '\n'}, '')
+      this.convertToPoses(poseArray)
     },
-    convertToPoses: function() {
+    convertToPoses: function(poseArray=false) {
       const sequence = document.getElementById("input").value;
-      const linesArray = sequence.split("\n");
+      const linesArray = poseArray || sequence.split("\n");
       console.log(linesArray);
       this.outputPoses = [];
       console.log("--- entering loop ---");
