@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-    <h2>Yoga Sequencer</h2>
-    <h4>About</h4>
+    <h2>Yoga Sequencer <b>About</b> </h2>
     <YogaTutorial :poses="poses" />
     <YogaPoses :poses="poses" />
   </div>
@@ -10,56 +9,7 @@
 <script>
 import YogaPoses from './components/YogaPoses.vue'
 import YogaTutorial from './components/YogaTutorial.vue'
-
-const posesArray = [
-  {
-    id: 1,
-    name: "Downward Facing Dog",
-    sanscrit: "Adho Mukha Svansana",
-    chakras: ["Vishuddha"],
-    aliases: [
-      "dfd",
-      "down dog",
-      "downward facing dog",
-      "dog"
-      ],
-    imageUrl:
-      "https://github.com/azitowolf/yogaposes/blob/master/DFD.png?raw=true"
-  },
-  {
-    id: 2,
-    name: "Mountain",
-    sanscrit: "Tadasana",
-    aliases: ["mountain", "mtn", "mount"],
-    imageUrl:
-      "https://github.com/azitowolf/yogaposes/blob/master/mountain.png?raw=true"
-  },
-  {
-    id: 3,
-    name: "Chattaranga",
-        sanscrit: "Urdhva Mukha Svansana",
-        chakras: [""],
-
-    aliases: ["Chattaranga", "chat"],
-    imageUrl:
-      "https://github.com/azitowolf/yogaposes/blob/master/chattaranga.png?raw=true"
-  },
-  {
-    id: 4,
-    name: "Upward Facing Dog",
-    sanscrit: "Urdhva Mukha Svansana",
-    aliases: ["upward facing dog", "ufd"],
-    imageUrl:
-      "https://github.com/azitowolf/yogaposes/blob/master/upward_facing_dog.png?raw=true"
-  },
-  {
-    id: 5,
-    name: "Half Moon",
-    aliases: ["half moon", "hfmn"],
-    imageUrl:
-      "https://github.com/azitowolf/yogaposes/blob/master/half_moon.png?raw=true"
-  }
-];
+import axios from 'axios'
 
 export default {
   name: 'App',
@@ -68,7 +18,12 @@ export default {
     YogaPoses
   },
   data: function () {
-    return {poses: posesArray}
+    return {poses: []}
+  },
+  mounted: function () {
+  axios
+    .get('https://5iv5ywr9.api.sanity.io/v1/data/query/production?query=*[_type%20==%20%22pose%22]')
+    .then(response => (this.poses = response.data.result))
   }
 }
 </script>
@@ -80,6 +35,10 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin: 60px auto;
+  max-width: 700px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
 }
 </style>
