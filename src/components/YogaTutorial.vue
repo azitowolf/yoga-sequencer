@@ -9,7 +9,7 @@
             <strong>{{pose.name}}</strong>
             : {{pose.aliases}}
           </div>
-        </div>    
+        </div>
       </div>
     </div>
   </div>
@@ -28,7 +28,7 @@ export default {
     console.log("--------------");
   },
   methods: {
-    
+
   }
 };
 </script>

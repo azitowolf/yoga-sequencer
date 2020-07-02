@@ -21,9 +21,9 @@ export default {
     return {poses: []}
   },
   mounted: function () {
-  axios
-    .get('https://5iv5ywr9.api.sanity.io/v1/data/query/production?query=*[_type%20==%20%22pose%22]')
-    .then(response => (this.poses = response.data.result))
+    axios
+      .get('https://5iv5ywr9.api.sanity.io/v1/data/query/production?query=*[_type%20==%20%22pose%22]')
+      .then(response => this.poses = response.data.result)
   }
 }
 </script>
