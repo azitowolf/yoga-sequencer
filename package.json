@@ -39,7 +39,10 @@
       "eqeqeq": 1,
       "dot-notation": 1,
       "no-trailing-spaces": 1,
-      "indent": [1, 2]
+      "indent": [
+        1,
+        2
+      ]
     }
   },
   "browserslist": [
