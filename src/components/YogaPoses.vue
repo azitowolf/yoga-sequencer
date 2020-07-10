@@ -1,6 +1,7 @@
 <template>
   <div class="yoga-poses-component">
-    <p>Enter your sequence below in the following format</p>
+    <h2>Sequencer</h2>
+    <p>Enter your sequence below in the following format, press enter.</p>
 
     <textarea v-model="poseInput" id="input" v-on:keyup.13="convertToPoses()"></textarea>
     <button id="convert-button" v-on:click="convertToPoses()">Convert</button>
@@ -109,9 +110,22 @@ export default {
 .pose-card-list {
   display: flex;
   flex-flow: row wrap;
+  align-content: flex-start;
 }
 
 .pose-card {
-  flex: 130px;
+  position: relative;
 }
+
+.pose-card::after {
+    content: "→";
+    position: absolute;
+    font-size: 20px;
+    right: 0px;
+    top: 50%;
+}
+.pose-card:last-child::after {
+    content: "";
+}
+
 </style>

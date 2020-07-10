@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <h2>Yoga Sequencer <b>About</b> </h2>
+    <h2>Yoga Sequencer  </h2>
+    <p>A little app to help yoga teachers or practitioners visualize their practice in sequence. </p>
     <YogaTutorial :poses="poses" />
     <YogaPoses :poses="poses" />
   </div>
