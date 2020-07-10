@@ -1,6 +1,9 @@
 # yoga-sequencer
 Little app to help yoga teachers visualize sequences. enter your poses in a ceratin format and it'll return a nice little picture for you to use!
 
+Live URL
+https://yogasequencer.netlify.app/
+
 ## Technology
 
 ## API
@@ -19,6 +22,7 @@ Frontend
 * User can see more information on each pose
 * User can change the layout of the poses
 * User can print the poses (print-friendly view)
+* User can see poses in Single Column on Mobile
 
 # Learning Materials
 

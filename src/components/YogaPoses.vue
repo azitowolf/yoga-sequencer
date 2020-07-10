@@ -1,7 +1,7 @@
 <template>
   <div class="yoga-poses-component">
     <h2>Sequencer</h2>
-    <p>Enter your sequence below in the following format, press enter.</p>
+    <p>Enter your sequence below in the following format, press enter. </p>
 
     <textarea v-model="poseInput" id="input" v-on:keyup.13="convertToPoses()"></textarea>
     <button id="convert-button" v-on:click="convertToPoses()">Convert</button>
@@ -9,7 +9,8 @@
     <p>...and a yoga sequence diagram will be generated for you below</p>
     <p>
       try a demo set
-      <button v-on:click="setDemo(['mountain', 'raised arms', 'forward bend', 'flat back', 'chattaranga'])">Suriya A</button>
+      <button v-on:click="setDemo(demoSequences.surya_a)">Suriya A</button>
+      <button v-on:click="setDemo(demoSequences.surya_b)">Suriya B</button>
     </p>
     <div class="pose-card-list">
       <div v-for="pose in outputPoses" class="pose-card" v-bind:key="pose.id">
@@ -21,10 +22,13 @@
 </template>
 
 <script>
+import demoSequences from '../assets/demosequences.json'
+
 export default {
   name: "YogaPoses",
   data: function() {
     return {
+      demoSequences: demoSequences,
       outputPoses: [],
       poseInput: ""
     };
@@ -85,7 +89,7 @@ export default {
           // find the correct pose in pose array
           pose => pose.aliases.indexOf(this.cleanString(line)) >= 0
         );
-        console.log(result);
+        if (result === undefined) console.warn `no pose found with the name ${line}`
         if (result) this.outputPoses.push(this.objectify(result));
       });
     }
