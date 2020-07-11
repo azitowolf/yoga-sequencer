@@ -5,14 +5,14 @@
       1. Downward facing dog
       2. Upward facing dog
       3. Mountain
-      4. etc... 
+      4. etc...
     </pre>
     <p>Or you can get lazy and write the sequence more like this...</p>
     <pre>
       1. DFD
       2. UFD
       3. Mountain
-      4. etc... 
+      4. etc...
     </pre>
     <p>The app will create a nice little picture for you</p>
     <img src="../assets/example-seq.png" alt srcset />

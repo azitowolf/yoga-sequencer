@@ -1,32 +1,37 @@
 <template>
   <div id="app">
-    <h2>Yoga Sequencer  </h2>
-    <p>A little app to help yoga teachers or practitioners visualize their practice in sequence. </p>
+    <h2>Yoga Sequencer</h2>
+    <p>A little app to help yoga teachers or practitioners visualize their practice in sequence.</p>
+    <button href="/sequence"></button>
     <YogaTutorial :poses="poses" />
     <YogaPoses :poses="poses" />
   </div>
 </template>
 
 <script>
-import YogaPoses from './components/YogaPoses.vue'
-import YogaTutorial from './components/YogaTutorial.vue'
-import axios from 'axios'
+import YogaPoses from "./components/YogaPoses.vue";
+import YogaTutorial from "./components/YogaTutorial.vue";
+import axios from "axios";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     YogaTutorial,
     YogaPoses
   },
-  data: function () {
-    return {poses: []}
+  data: function() {
+    return {
+      poses: []
+    };
   },
-  mounted: function () {
+  mounted: function() {
     axios
-      .get('https://5iv5ywr9.api.sanity.io/v1/data/query/production?query=*[_type%20==%20%22pose%22]')
-      .then(response => this.poses = response.data.result)
+      .get(
+        "https://5iv5ywr9.api.sanity.io/v1/data/query/production?query=*[_type%20==%20%22pose%22]"
+      )
+      .then(response => this.poses = response.data.result);
   }
-}
+};
 </script>
 
 <style>

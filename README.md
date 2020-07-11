@@ -7,8 +7,10 @@ https://yogasequencer.netlify.app/
 ## Technology
 
 ## API
-Base URL https://5iv5ywr9.api.sanity.io/v1/data/query/production?query=*[_type%20==%20%22pose%22]
-Will post a little website if anyone wants to use the API for their own personal projects, practice, whatever.
+Base URL https://5iv5ywr9.api.sanity.io/v1/data/query/production?query=*[_type%20==%20%22pose%22] (see the GROQ documentation (https://www.sanity.io/docs/query-cheat-sheet) for info on how to construct queries)
+Image CDN URL `https://cdn.sanity.io/images/5iv5ywr9/production/{imageID}.{fileType}`
+A little website if anyone wants to use the API for their own personal projects, practice, whatever
+https://www.notion.so/Yoga-Poses-API-fea18ff798c9435ebc5c7ec9e009d31d
 
 ## Feature list
 
