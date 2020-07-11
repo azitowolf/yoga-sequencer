@@ -22,14 +22,16 @@
       <div class="tutorial-list">
         <p>The following aliases are supported in the app:</p>
         <div v-for="pose in poses" v-bind:key="pose.name" class="alias-name">
-          <div class="alias-dropdown">
-            <button v-on:click="expand">{{pose.name}}</button>
+          <div id="alias-dropdown" class="alias-dropdown">
+            <button v-on:click="expand">{{ pose.name }}</button>
             <div
               v-for="alias in pose.aliases"
               v-bind:key="alias.name"
               :class="alias.name"
               class="pose-alias"
-            >{{alias}}</div>
+            >
+              {{ alias }}
+            </div>
           </div>
         </div>
       </div>
@@ -43,8 +45,8 @@ export default {
   name: "YogaTutorial",
   props: {
     poses: {
-      type: Array
-    }
+      type: Array,
+    },
   },
   created: function() {
     console.log("rendering the yoga tutorial component");
@@ -53,17 +55,15 @@ export default {
   methods: {
     expand: function(e) {
       let dropdown = e.target.closest(".alias-dropdown");
-      console.log(typeof dropdown);
       document
         .getElementsByClassName("alias-dropdown")
-        .forEach(element => element.classList.remove("open"));
+        .forEach((element) => element.classList.remove("open"));
       dropdown.classList.add("open");
-    }
-  }
+    },
+  },
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .yoga-tutorial-component,
 .tutorial-list {
