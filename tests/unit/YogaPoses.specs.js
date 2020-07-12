@@ -1,5 +1,5 @@
 // Import `shallowMount` from Vue Test Utils and the component being tested
-import { shallowMount, mount } from "@vue/test-utils";
+import { shallowMount } from "@vue/test-utils";
 import YogaTutorial from "./../../src/components/YogaTutorial.vue";
 
 // Test Data
@@ -32,7 +32,11 @@ const testProps = [
 
 // Mount the component
 const wrapper = shallowMount(YogaTutorial);
-console.log(wrapper.vm);
+function getMountedComponent(Component, propsData) {
+  return shallowMount(Component, {
+    propsData,
+  });
+}
 
 describe("YogaTutorial", () => {
   // Inspect the raw component options
@@ -47,20 +51,12 @@ describe("YogaTutorial", () => {
   });
 
   // Mount an instance with props
-  it("renders the tutorial list", () => {
-    expect(wrapper.exists()).toBe(true);
-    expect(wrapper.find(".tutorial-list").exists()).toBe(true);
+  it("renders the correct messages based on props", () => {
+    const wrapperWithProps = getMountedComponent(YogaTutorial, {
+      props: testProps,
+    });
+
+    expect(wrapperWithProps.exists()).toBe(true);
+    expect(typeof wrapperWithProps.element).toBe("object");
     // renders a single yoga pose with the name correctly    });
-  });
-
-  it("renders as many poses as are passed", () => {
-    const wrapperWithProps = mount(YogaTutorial);
-    wrapperWithProps.setProps({ poses: testProps });
-
-    expect(wrapperWithProps.vm.poses).toBe(testProps);
-
-    const $aliasesArray = wrapperWithProps.findAll("pre");
-    console.log($aliasesArray);
-    expect($aliasesArray.length).toBe(2);
-  });
 });

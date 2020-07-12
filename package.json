@@ -40,14 +40,9 @@
     },
     "rules": {
       "no-cond-assign": 1,
-      "no-extra-parens": 2,
       "eqeqeq": 1,
       "dot-notation": 1,
-      "no-trailing-spaces": 1,
-      "indent": [
-        1,
-        2
-      ]
+      "no-trailing-spaces": 1
     },
     "overrides": [
       {

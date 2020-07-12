@@ -1,11 +1,19 @@
 <template>
-  <div id="app">
-    <h2>Yoga Sequencer</h2>
-    <p>A little app to help yoga teachers or practitioners visualize their practice in sequence.</p>
-    <button href="/sequence"></button>
-    <YogaTutorial :poses="poses" />
-    <YogaPoses :poses="poses" />
-  </div>
+	<div id="app">
+		<h1>🧘‍♂️ Yoga Sequencer</h1>
+		<p>
+			A little app to help yoga teachers or practitioners <b>visualize their
+			practice</b> in sequence.
+		</p>
+		<a href="#yoga-tutorial-component" class="to-tutorial">Learn More</a>
+		<a href="#yoga-poses-component" class="to-sequencer">Take Me to the Sequencer</a>
+
+		<div class="app-body">
+			<!-- TODO remove routes if not needed -->
+			<YogaTutorial :poses="poses" />
+			<YogaPoses :poses="poses" />
+		</div>
+	</div>
 </template>
 
 <script>
@@ -14,23 +22,25 @@ import YogaTutorial from "./components/YogaTutorial.vue";
 import axios from "axios";
 
 export default {
-  name: "App",
-  components: {
-    YogaTutorial,
-    YogaPoses
-  },
-  data: function() {
-    return {
-      poses: []
-    };
-  },
-  mounted: function() {
-    axios
-      .get(
-        "https://5iv5ywr9.api.sanity.io/v1/data/query/production?query=*[_type%20==%20%22pose%22]"
-      )
-      .then(response => this.poses = response.data.result);
-  }
+	name: "App",
+	components: {
+		YogaTutorial,
+		YogaPoses
+	},
+	data: function() {
+		return {
+			page: "home",
+			poses: []
+		};
+	},
+	mounted: function() {
+		axios
+			.get(
+				"https://5iv5ywr9.api.sanity.io/v1/data/query/production?query=*[_type%20==%20%22pose%22]"
+			)
+			.then(response => this.poses = response.data.result)
+			.catch(error => console.warn(`error! Message: ${error.message}`))
+	}
 };
 </script>
 
@@ -46,5 +56,8 @@ export default {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
+}
+.app-body {
+	margin-top: 10px;
 }
 </style>
