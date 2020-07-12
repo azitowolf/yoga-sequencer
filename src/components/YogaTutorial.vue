@@ -30,11 +30,12 @@
 
 			<div class="supported-poses-list">
 				<div
-					id="alias-dropdown"
 					class="alias-dropdown"
 					v-on:click="expand"
 					v-for="pose in poses"
 					v-bind:key="pose.name"
+          :id="pose.name"
+					v-bind:class="{ 'open': pose.name === browsingPose }"
 				>
 					{{ pose.name }}
 					<div class="aliases-modal">
@@ -60,17 +61,19 @@ export default {
 			type: Array
 		}
 	},
+	data: function() {
+		return {
+			browsingPose: "Equestrian"
+		};
+	},
 	created: function() {
 		console.log("rendering the yoga tutorial component");
 		console.log("--------------");
 	},
 	methods: {
 		expand: function(e) {
-			let dropdown = e.target.closest(".alias-dropdown");
-			document
-				.getElementsByClassName("alias-dropdown")
-				.forEach(element => element.classList.remove("open"));
-			dropdown.classList.add("open");
+      let dropdownName = e.target.closest(".alias-dropdown").id;
+      this.browsingPose = dropdownName;
 		}
 	}
 };
