@@ -34,8 +34,8 @@
 					v-on:click="expand"
 					v-for="pose in poses"
 					v-bind:key="pose.name"
-          :id="pose.name"
-					v-bind:class="{ 'open': pose.name === browsingPose }"
+					:id="pose.name"
+					v-bind:class="{ open: pose.name === browsingPose }"
 				>
 					{{ pose.name }}
 					<div class="aliases-modal">
@@ -72,8 +72,8 @@ export default {
 	},
 	methods: {
 		expand: function(e) {
-      let dropdownName = e.target.closest(".alias-dropdown").id;
-      this.browsingPose = dropdownName;
+			let dropdownName = e.target.closest(".alias-dropdown").id;
+			this.browsingPose = dropdownName;
 		}
 	}
 };
@@ -83,35 +83,35 @@ export default {
 .yoga-tutorial-component,
 .supported-poses,
 .supported-poses-list {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	text-align: left;
 }
 .yoga-tutorial-component pre {
-  text-align: left;
+	text-align: left;
 }
 .supported-poses-list {
-  width: 100%;
-  padding:10px;
-  flex-direction: column;
-  flex-wrap: wrap;
-  position: relative;
-border: 3px solid papayawhip;}
+	width: 100%;
+	padding: 10px;
+	flex-direction: column;
+	flex-wrap: wrap;
+	position: relative;
+	border: 3px solid papayawhip;
+}
 
 .aliases-modal {
-  position: absolute;
-  visibility: hidden;
-  right:10px;
-  bottom: 50%;
-  text-align: right;
+	position: absolute;
+	visibility: hidden;
+	right: 10px;
+	bottom: 50%;
+	text-align: right;
 }
 .alias-dropdown.open {
-  font-weight: bold;
+	font-weight: bold;
 }
 .alias-dropdown.open .aliases-modal {
-  visibility: visible;
+	visibility: visible;
 }
-
 </style>

@@ -5,23 +5,21 @@
 			Enter your sequence seperated by new lines, then press enter or 'convert'.
 		</p>
 		<p>
-			Try a demo set: 
+			Try a demo set:
 			<button v-on:click="setDemo(demoSequences.surya_a)">Surya A</button>
 			<button v-on:click="setDemo(demoSequences.surya_b)">Surya B</button>
 		</p>
-		<textarea
-			v-model="poseInput"
-			id="input"
-			v-on:keyup.13="convertToPoses()"
-		/>
-		<button id="convert-button" v-on:click="convertToPoses()">Convert</button>
+		<textarea v-model="poseInput" id="input" v-on:keyup.13="convertToPoses()" />
+		<button id="convert-button" v-on:click="convertToPoses()">
+			Convert
+		</button>
 
 		<p>...and a yoga sequence diagram will be generated for you below</p>
 		<div class="pose-card-list">
 			<div v-for="pose in outputPoses" class="pose-card" v-bind:key="pose.id">
 				<img
 					:src="createImageUrlFromRef(pose.image.asset._ref)"
-					alt="pose image"
+					:alt="`image of yoga pose: ${pose.name}`"
 				/>
 				<div>{{ pose.name }}</div>
 			</div>
@@ -119,6 +117,11 @@ export default {
 #input {
   min-height: 200px;
   width: 100%;
+  border: 3px solid papayawhip;
+}
+
+#convert-button {
+  margin-left: 0px;
 }
 
 .pose-card-list {
@@ -145,6 +148,20 @@ export default {
 }
 .pose-card:last-child::after {
     content: "";
+}
+
+@media (max-width: 500px) {
+  .pose-card-list {
+    display: flex;
+    width: 100%;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: space-around;
+  }
+  .pose-card::after {
+    content: "";
+  }
 }
 
 </style>
