@@ -5,7 +5,7 @@
 			Enter your sequence seperated by new lines, then press enter or 'convert'.
 		</p>
 		<p>
-			Try a demo set
+			Try a demo set: 
 			<button v-on:click="setDemo(demoSequences.surya_a)">Surya A</button>
 			<button v-on:click="setDemo(demoSequences.surya_b)">Surya B</button>
 		</p>

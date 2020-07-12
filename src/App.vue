@@ -60,4 +60,11 @@ export default {
 .app-body {
 	margin-top: 10px;
 }
+button {
+	border:3px solid papayawhip;
+	padding:4px;
+	font-weight: bold;
+	background-color: white;
+	margin: .5em;
+}
 </style>
