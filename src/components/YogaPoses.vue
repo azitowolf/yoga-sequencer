@@ -15,6 +15,10 @@
 		</button>
 
 		<p>...and a yoga sequence diagram will be generated for you below</p>
+		<button v-on:click="optionsOpen = !optionsOpen">Display Options</button>
+		<div v-if="optionsOpen" class="optionsPanel">
+			<Options @toggle="toggleAdditionalInfo" />
+		</div>
 		<div class="pose-card-list">
 			<div v-for="pose in outputPoses" class="pose-card" v-bind:key="pose.id">
 				<img
@@ -22,6 +26,11 @@
 					:alt="`image of yoga pose: ${pose.name}`"
 				/>
 				<div>{{ pose.name }}</div>
+				<div v-if="showInfo.sanskrit">{{ pose.sanskrit }}</div>
+				<div v-if="showInfo.difficulty">
+					{{ difficultyString(pose.difficulty._ref) }}
+				</div>
+				<div v-if="showInfo.Description">{{ pose.Description }}</div>
 			</div>
 		</div>
 	</div>
@@ -30,18 +39,31 @@
 <script>
 // import sequence data
 import demoSequences from "../assets/demosequences.json";
+import Options from "./Options";
 
 export default {
 	name: "YogaPoses",
+	components: {
+		Options
+	},
 	data: function() {
 		return {
 			demoSequences: demoSequences,
 			outputPoses: [],
-			poseInput: ""
+			poseInput: "",
+			optionsOpen: false,
+			showInfo: {
+				sanskrit: false,
+				Description: false,
+				difficulty: false
+			}
 		};
 	},
 	props: {
 		poses: {
+			type: Array
+		},
+		difficulties: {
 			type: Array
 		}
 	},
@@ -51,6 +73,13 @@ export default {
 		this.outputPoses = [];
 	},
 	methods: {
+		difficultyString: function(refId) {
+      const matchedDifficulty = this.difficulties.find(difficulty => refId === difficulty._id);
+      return matchedDifficulty.value;
+		},
+		toggleAdditionalInfo: function(field) {
+			this.showInfo[field] = !this.showInfo[field];
+		},
 		createImageUrlFromRef: function(ref) {
 			const refParams = ref.split("-");
 			const fileType = refParams[3];
@@ -107,61 +136,60 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
 .yoga-poses-component {
-  flex-direction: column;
-  display: flex;
-  align-items: flex-start;
+	flex-direction: column;
+	display: flex;
+	align-items: flex-start;
 }
 
 #input {
-  min-height: 200px;
-  width: 100%;
-  border: 3px solid papayawhip;
+	min-height: 200px;
+	width: 100%;
+	border: 3px solid papayawhip;
 }
 
 #convert-button {
-  margin-left: 0px;
+	margin-left: 0px;
 }
 
 .pose-card-list {
-  display: flex;
-  flex-flow: row wrap;
-  align-content: flex-start;
-  border: 3px solid papayawhip;
-  padding:10px
+	display: flex;
+	flex-flow: row wrap;
+	align-content: flex-start;
+	border: 3px solid papayawhip;
+	padding: 10px;
 }
 .pose-card-list:empty {
-    border: none;
+	border: none;
 }
 
 .pose-card {
-  position: relative;
+	position: relative;
+	text-align: center;
 }
 
 .pose-card::after {
-    content: "→";
-    position: absolute;
-    font-size: 20px;
-    right: 0px;
-    top: 50%;
+	content: "→";
+	position: absolute;
+	font-size: 20px;
+	right: 0px;
+	top: 50%;
 }
 .pose-card:last-child::after {
-    content: "";
+	content: "";
 }
 
 @media (max-width: 500px) {
-  .pose-card-list {
-    display: flex;
-    width: 100%;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
-    align-content: space-around;
-  }
-  .pose-card::after {
-    content: "";
-  }
+	.pose-card-list {
+		display: flex;
+		width: 100%;
+		flex-flow: column wrap;
+		justify-content: center;
+		align-items: center;
+		align-content: space-around;
+	}
+	.pose-card::after {
+		content: "";
+	}
 }
-
 </style>

@@ -13,7 +13,7 @@
 		<div class="app-body">
 			<!-- TODO remove routes if not needed -->
 			<YogaTutorial :poses="poses" />
-			<YogaPoses :poses="poses" />
+			<YogaPoses :poses="poses" :difficulties="difficulties" />
 		</div>
 	</div>
 </template>
@@ -32,16 +32,23 @@ export default {
 	data: function() {
 		return {
 			page: "home",
-			poses: []
+			poses: [],
+			difficulties: []
 		};
 	},
-	mounted: function() {
-		axios
-			.get(
+	mounted: async function() {
+		try {
+			const poseArray = await axios.get(
 				"https://5iv5ywr9.api.sanity.io/v1/data/query/production?query=*[_type%20==%20%22pose%22]"
-			)
-			.then(response => (this.poses = response.data.result))
-			.catch(error => console.warn(`error! Message: ${error.message}`));
+			);
+			this.poses = poseArray.data.result;
+			const difficulties = await axios.get(
+				"https://5iv5ywr9.api.sanity.io/v1/data/query/production?query=*[_type%20==%20%22difficulty%22]"
+			);
+			this.difficulties = difficulties.data.result;
+		} catch (error) {
+			console.warn(`error! Message: ${error.message}`);
+		}
 	}
 };
 </script>
