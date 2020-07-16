@@ -20,11 +20,14 @@ Backend
     * https://documenter.getpostman.com/view/1251770/T17J9Saj?version=latest
 
 Frontend
-* User can see arrows in the sequence to see which direction it goes
-* User can see more information on each pose
+* User can see arrows in the sequence to see which direction it goes DONE
+* User can see more information on each pose DONE
 * User can change the layout of the poses
 * User can print the poses (print-friendly view)
 * User can see poses in Single Column on Mobile
+* User can acces a sample set Surya C
+* User can toggle between photo sets :) ** high demand, high fun
+
 
 # Learning Materials
 

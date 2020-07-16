@@ -1,5 +1,5 @@
 <template>
-	<div class="yoga-tutorial-component" id="yoga-tutorial-component">
+	<div id="yoga-tutorial-component" class="yoga-tutorial-component" >
 		<h2>About</h2>
 		<!-- TODO turn this into a static md file :) -->
 		<p>The idea is simple: You enter your sequence in the format below:</p>
@@ -65,10 +65,6 @@ export default {
 		return {
 			browsingPose: "Equestrian"
 		};
-	},
-	created: function() {
-		console.log("rendering the yoga tutorial component");
-		console.log("--------------");
 	},
 	methods: {
 		expand: function(e) {
