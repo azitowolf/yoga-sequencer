@@ -1,0 +1,401 @@
+
+	{
+		"ms": 10,
+		"query": "*[_type == \"pose\"]",
+		"result": [
+			{
+				"Description": "Half moon pose, or ardha chandrasana, is both a standing and balancing posture. With one foot rooted firmly to the ground, the other lifts toward the sky. The hands do the same; one hand rests on the ground while the other lifts toward the sky. The pose develops focus and concentration.",
+				"_createdAt": "2020-06-27T15:08:27Z",
+				"_id": "067e6398-855e-4c64-82ba-9e9638bbd2d9",
+				"_rev": "fC2enKhGoDy6Fwhgs4Pova",
+				"_type": "pose",
+				"_updatedAt": "2020-07-05T15:12:26Z",
+				"aliases": [
+					"half moon",
+					"hfmn"
+				],
+				"difficulty": {
+					"_ref": "2b11d4de-c6b9-4f04-9fcc-334031e1fc8c",
+					"_type": "reference"
+				},
+				"image": {
+					"_type": "image",
+					"asset": {
+						"_ref": "image-4a20044b0501c8c918854a0dfed09b8902b873b7-130x130-png",
+						"_type": "reference"
+					}
+				},
+				"name": "Half Moon",
+				"sanskrit": "Ardha Chandrasana"
+			},
+			{
+				"_createdAt": "2020-07-12T03:20:30Z",
+				"_id": "0d8d4610-80a3-4dd5-b90a-25c1e446d2b8",
+				"_rev": "IT2L0aqWToOorOcvdbEXMB",
+				"_type": "pose",
+				"_updatedAt": "2020-07-12T03:21:55Z",
+				"aliases": [
+					"child",
+					"child pose",
+					"childs pose"
+				],
+				"description": "Child’s pose is a resting pose in which the yogi begins by sitting back on the heels with the knees hip-width apart and the palms on the thighs. The torso is then lowered toward the thighs while the arms stretch overhead and the forehead and palms rest on the floor. Finally, the arms are brought back to the sides, palms facing up. The practitioner should relax the shoulders and neck and breathe through the nostrils while holding the pose for one to two minutes or as long as it is comfortable.",
+				"difficulty": {
+					"_ref": "2b11d4de-c6b9-4f04-9fcc-334031e1fc8c",
+					"_type": "reference"
+				},
+				"image": {
+					"_type": "image",
+					"asset": {
+						"_ref": "image-94573dab2c1400c4446e2c7e26b5afde9d94ad65-130x130-png",
+						"_type": "reference"
+					}
+				},
+				"name": "Child",
+				"sanskrit": "Balasana"
+			},
+			{
+				"Description": "Standing in mountain pose helps to tone the abdominal muscles and the buttocks. It strengthens the whole of the legs, including the feet and ankles, potentially reducing flat feet and improving plantar fasciitis. It also improves one's posture and may relieve sciatica.",
+				"_createdAt": "2020-06-27T03:57:10Z",
+				"_id": "113b5fd6-d545-489e-8580-916168ff75e7",
+				"_rev": "IT2L0aqWToOorOcvdXAc59",
+				"_type": "pose",
+				"_updatedAt": "2020-07-05T15:07:22Z",
+				"aliases": [
+					"mtn",
+					"mountain",
+					"mount"
+				],
+				"difficulty": {
+					"_ref": "2b11d4de-c6b9-4f04-9fcc-334031e1fc8c",
+					"_type": "reference"
+				},
+				"image": {
+					"_type": "image",
+					"asset": {
+						"_ref": "image-f7d1023c4f3290b5597e4a47059bae941d7f0420-130x130-png",
+						"_type": "reference"
+					}
+				},
+				"name": "Mountain",
+				"sanskrit": "Tadasana"
+			},
+			{
+				"Description": "Standing half forward bend is a yoga inversion that strengthens and stretches the hamstrings, and massages the abdominal muscles. This is a popular posture in vinyasa styles of yoga and it is included in Sun Salutation (Surya Namaskara) A and B.",
+				"_createdAt": "2020-07-05T15:02:25Z",
+				"_id": "250ab866-552c-4080-8d1e-3fef0edf186e",
+				"_rev": "v2c9se7zSIXcDOzPvheK1k",
+				"_type": "pose",
+				"_updatedAt": "2020-07-05T15:06:38Z",
+				"aliases": [
+					"flat back",
+					"flat back pose",
+					"standing half forward bend",
+					"standing forward bend"
+				],
+				"difficulty": {
+					"_ref": "2b11d4de-c6b9-4f04-9fcc-334031e1fc8c",
+					"_type": "reference"
+				},
+				"image": {
+					"_type": "image",
+					"asset": {
+						"_ref": "image-87c1e90cb9c0165255122ddad80cf5c54d710e85-130x130-png",
+						"_type": "reference"
+					}
+				},
+				"name": "Flat Back",
+				"sanskrit": "Ardha Uttanasana"
+			},
+			{
+				"Description": "Plank pose, or kumbbhakasana in Sanskrit, is a core strengthening posture that's usually used a transition between other yoga poses. It's the same position as the top of a pushup: body weight on the hands and feet, the torso and legs in one diagonal line.",
+				"_createdAt": "2020-07-05T15:18:31Z",
+				"_id": "382a8357-54a3-4640-a17e-ee63d719de38",
+				"_rev": "fC2enKhGoDy6Fwhgs4SJf8",
+				"_type": "pose",
+				"_updatedAt": "2020-07-05T15:54:42Z",
+				"aliases": [
+					"plank"
+				],
+				"difficulty": {
+					"_ref": "2b11d4de-c6b9-4f04-9fcc-334031e1fc8c",
+					"_type": "reference"
+				},
+				"image": {
+					"_type": "image",
+					"asset": {
+						"_ref": "image-504a1535e9d9ad08a732af77ab94e1a3fea38ae4-130x130-png",
+						"_type": "reference"
+					}
+				},
+				"name": "Plank",
+				"sanskrit": "kumbbhakasana"
+			},
+			{
+				"Description": "Downward-facing dog pose, or adho mukha svanasana, is a foundational yoga asana that requires flexibility and upper body strength. In this asana, the body forms an inverted “V” with the feet and hands pressing into the ground and the hips pushing upward.",
+				"_createdAt": "2020-06-27T02:46:18Z",
+				"_id": "3b736062-1234-4c5b-8e45-99bfaa0babe8",
+				"_rev": "IT2L0aqWToOorOcvdXAnMZ",
+				"_type": "pose",
+				"_updatedAt": "2020-07-05T15:16:32Z",
+				"aliases": [
+					"dfd",
+					"down dog",
+					"downward dog",
+					"dog",
+					"downward facing dog"
+				],
+				"difficulty": {
+					"_ref": "2b11d4de-c6b9-4f04-9fcc-334031e1fc8c",
+					"_type": "reference"
+				},
+				"image": {
+					"_type": "image",
+					"asset": {
+						"_ref": "image-e213c047ccea7b7ac9260646605866185e7e3415-130x130-png",
+						"_type": "reference"
+					}
+				},
+				"name": "Downward Facing Dog",
+				"sanskrit": "Adho Mukha Svansana",
+				"translation": [
+					"adho = downward",
+					"mukha = face",
+					"svana = dog"
+				]
+			},
+			{
+				"_createdAt": "2020-07-12T03:18:46Z",
+				"_id": "4c877c7b-32a9-492a-b588-6bfc53a926ae",
+				"_rev": "IT2L0aqWToOorOcvdbEUf5",
+				"_type": "pose",
+				"_updatedAt": "2020-07-12T03:18:46Z",
+				"aliases": [
+					"high lunge",
+					"high lunge pose",
+					"utthita ashwa sanchalanasana"
+				],
+				"description": "High lunge pose is a beginner yoga pose that strengthens the legs and the whole lower body, stretches the hips and groin, opens the chest, and strengthens the arms.  Starting in standing forward bend, the knees bend and one leg steps backward, placing the ball of the foot on the mat. The front leg creates a right angle with the knee right above the ankle. Hands press into the mat, torso lengthens forward and lays on the front thigh. Back leg is straight, knee presses up toward the ceiling, heel stretches toward the floor. Shoulders roll back and down while the chest presses forward. The gaze points forward.",
+				"difficulty": {
+					"_ref": "2b11d4de-c6b9-4f04-9fcc-334031e1fc8c",
+					"_type": "reference"
+				},
+				"image": {
+					"_type": "image",
+					"asset": {
+						"_ref": "image-b7f7e86a75a096ba05d94c8fd80dc6654905d31b-130x130-png",
+						"_type": "reference"
+					}
+				},
+				"name": "High Lunge",
+				"sanskrit": "Utthita Ashwa Sanchalanasana"
+			},
+			{
+				"Description": "Standing forward bend is a yoga postured designed to provide a strong stretch for the back of the body. It is also an inversion because the heart is higher than the head when the body is in this pose. The feet are placed together flat on the ground, the legs are straight and the body hinges forward from the hips. The neck should be relaxed. If the hamstring and back of the body are flexible enough, the abdomen folds onto the thighs and the palms rest on the floor.",
+				"_createdAt": "2020-07-05T15:02:45Z",
+				"_id": "4cf1154a-2121-4044-b78a-943ed5c1b4e5",
+				"_rev": "IT2L0aqWToOorOcvdXAaQV",
+				"_type": "pose",
+				"_updatedAt": "2020-07-05T15:06:06Z",
+				"aliases": [
+					"standing forward bend",
+					"uttanasana",
+					"forward bend"
+				],
+				"difficulty": {
+					"_ref": "2b11d4de-c6b9-4f04-9fcc-334031e1fc8c",
+					"_type": "reference"
+				},
+				"image": {
+					"_type": "image",
+					"asset": {
+						"_ref": "image-ca974334df606f07dce633ae3b85b8fa4359ca7e-130x130-png",
+						"_type": "reference"
+					}
+				},
+				"name": "Forward Bend",
+				"sanskrit": "Uttanasana"
+			},
+			{
+				"Description": "Equestrian pose is a low lunging posture that forms the fourth part of the sun salutation sequence. One leg is stepped back, with the hands on the floor on either side of the front foot. The back knee usually rests on the ground and the head and gaze are lifted. Some say the eyes should be rolled upwards in this posture.",
+				"_createdAt": "2020-07-05T14:58:23Z",
+				"_id": "5c4b8cee-c0cd-43d6-bfe8-f0dd3330ac28",
+				"_rev": "v2c9se7zSIXcDOzPvhdSrs",
+				"_type": "pose",
+				"_updatedAt": "2020-07-05T14:58:23Z",
+				"aliases": [
+					"equestrian",
+					"eq",
+					"Ashwa Sanchalanasana"
+				],
+				"image": {
+					"_type": "image",
+					"asset": {
+						"_ref": "image-75a2dcd39e16cb0d249f81709753665776f62aa7-130x130-png",
+						"_type": "reference"
+					}
+				},
+				"name": "Equestrian",
+				"sanskrit": "Ashwa Sanchalanasana",
+				"translation": [
+					""
+				]
+			},
+			{
+				"Description": "Low plank pose, or chaturanga dandasana in Sanskrit, is most commonly practiced in Vinyasa yoga as a transition between plank and upward-facing dog pose. From plank, the yogi bends their elbows and lowers their body toward the ground, using the strength of their core and arms to hold the pose.",
+				"_createdAt": "2020-06-27T15:06:12Z",
+				"_id": "72ca2d02-a781-4322-a398-8b5e95155780",
+				"_rev": "IT2L0aqWToOorOcvdXAlFH",
+				"_type": "pose",
+				"_updatedAt": "2020-07-05T15:14:51Z",
+				"aliases": [
+					"chaturanga",
+					"chat",
+					"low plank",
+					"pushup"
+				],
+				"difficulty": {
+					"_ref": "2b11d4de-c6b9-4f04-9fcc-334031e1fc8c",
+					"_type": "reference"
+				},
+				"image": {
+					"_type": "image",
+					"asset": {
+						"_ref": "image-d20c77ba7332e2804a5015db9d72182c01197a13-130x130-png",
+						"_type": "reference"
+					}
+				},
+				"name": "Low Plank",
+				"sanskrit": "Chaturanga"
+			},
+			{
+				"Description": "Raised arms pose is the name used for several related basic yoga postures or variations that lengthen the spine, improve posture, and stretch the arms and shoulders. A variation of raised arms pose is included in all Sun Salutation (Surya Namaskara) vinyasas.  From a standing position, the arms are raised overhead. Depending on the variation, the palms may face each other or be pressed together, and the spine may remain straight or include a gentle backward arch. The gaze may be straight ahead or upward.",
+				"_createdAt": "2020-07-05T15:21:09Z",
+				"_id": "8bac6ffd-e9a9-4778-b787-f9009437f396",
+				"_rev": "fC2enKhGoDy6Fwhgs4QNje",
+				"_type": "pose",
+				"_updatedAt": "2020-07-05T15:21:09Z",
+				"aliases": [
+					"hasta uttanasana",
+					"raised arm"
+				],
+				"difficulty": {
+					"_ref": "2b11d4de-c6b9-4f04-9fcc-334031e1fc8c",
+					"_type": "reference"
+				},
+				"image": {
+					"_type": "image",
+					"asset": {
+						"_ref": "image-79f3d869f52de608c111dece05d3c7a3f086cbd6-130x130-png",
+						"_type": "reference"
+					}
+				},
+				"name": "Raised Arm",
+				"sanskrit": "Hasta Uttanasana"
+			},
+			{
+				"_createdAt": "2020-07-12T03:23:31Z",
+				"_id": "940ae85f-dadc-4acf-97ae-cb48d6e5fede",
+				"_rev": "fC2enKhGoDy6FwhgsFQuB0",
+				"_type": "pose",
+				"_updatedAt": "2020-07-12T03:24:15Z",
+				"aliases": [
+					"chair",
+					"chair pose",
+					"utkatasana"
+				],
+				"description": "Chair pose is a standing yoga posture that strengthens the core and lower body. In this pose, the arms extend upward alongside the ears, while the knees bend as if sitting on an imaginary chair.  This is an important pose in yoga for energizing the entire body and promoting creativity and mental strength.",
+				"difficulty": {
+					"_ref": "2b11d4de-c6b9-4f04-9fcc-334031e1fc8c",
+					"_type": "reference"
+				},
+				"image": {
+					"_type": "image",
+					"asset": {
+						"_ref": "image-79f3d869f52de608c111dece05d3c7a3f086cbd6-130x130-png",
+						"_type": "reference"
+					}
+				},
+				"name": "Chair",
+				"sanskrit": "Utkatasana"
+			},
+			{
+				"Description": "Prayer pose is a centering pose in yoga often used as a routine part of the sun salutation series or as a transitional pose between other standing poses. This pose is often used at the beginning and/or end of a yoga practice.  While standing, sitting or squatting, the palms press together in front of the heart's center while allowing the shoulders to roll down the back and the elbows to rest at the sides of the rib cage.",
+				"_createdAt": "2020-07-05T15:19:44Z",
+				"_id": "a5e2d7be-7315-41b8-ba14-f2d985722e7c",
+				"_rev": "IT2L0aqWToOorOcvdXArjV",
+				"_type": "pose",
+				"_updatedAt": "2020-07-05T15:19:44Z",
+				"aliases": [
+					"pranamasana",
+					"prayer"
+				],
+				"difficulty": {
+					"_ref": "2b11d4de-c6b9-4f04-9fcc-334031e1fc8c",
+					"_type": "reference"
+				},
+				"image": {
+					"_type": "image",
+					"asset": {
+						"_ref": "image-fb3a68e1c3384fd3f2fb9006d39172ffab92377c-130x130-png",
+						"_type": "reference"
+					}
+				},
+				"name": "Prayer",
+				"sanskrit": "Pranamasana"
+			},
+			{
+				"Description": "Upward facing dog pose, or urdhva mukha svanasana in Sanskrit, is most commonly practiced as a transition pose in surya namaskar A and B. It's similar to cobra pose, but here the thighs and pelvis lift completely from the floor so that the bodyweight is supported on the hands and tops of the feet only. The pose rejuvenates and strengthens the spine.",
+				"_createdAt": "2020-06-27T15:06:22Z",
+				"_id": "e42dd264-08aa-4f4e-a209-1006fbe18f0c",
+				"_rev": "IT2L0aqWToOorOcvdXAoKF",
+				"_type": "pose",
+				"_updatedAt": "2020-07-05T15:17:16Z",
+				"aliases": [
+					"upward facing dog",
+					"ufd",
+					"upward dog"
+				],
+				"difficulty": {
+					"_ref": "2b11d4de-c6b9-4f04-9fcc-334031e1fc8c",
+					"_type": "reference"
+				},
+				"image": {
+					"_type": "image",
+					"asset": {
+						"_ref": "image-b6d1cfe6f8c902d8fd5a6f2a821ddea61ed5cb21-130x130-png",
+						"_type": "reference"
+					}
+				},
+				"name": "Upward Facing Dog",
+				"sanskrit": "Urdhva Mukha Svansana"
+			},
+			{
+				"Description": "start by lying face down on the mat and placing each palm and elbow under the shoulders. Slowly press into the hands, and using the back muscles, lift the chest and head upward off of the mat. Another variation of this pose is performed with the legs slightly apart to decrease any tension placed on the spine.",
+				"_createdAt": "2020-07-05T15:00:23Z",
+				"_id": "ef77ebc7-608c-4064-89f6-a57a33082f8a",
+				"_rev": "IT2L0aqWToOorOcvdXAVRN",
+				"_type": "pose",
+				"_updatedAt": "2020-07-05T15:02:30Z",
+				"aliases": [
+					"half cobra pose",
+					"half cobra",
+					"little cobra pose",
+					"little cobra"
+				],
+				"difficulty": {
+					"_ref": "2b11d4de-c6b9-4f04-9fcc-334031e1fc8c",
+					"_type": "reference"
+				},
+				"image": {
+					"_type": "image",
+					"asset": {
+						"_ref": "image-86a305653dc71fc32d8c326319412e0e4e02f0b0-130x130-png",
+						"_type": "reference"
+					}
+				},
+				"name": "Baby Cobra",
+				"sanskrit": " Ardha Bhujangasana"
+			}
+		]
+	}
