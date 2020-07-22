@@ -36,8 +36,8 @@ describe("YogaTutorial", () => {
     expect(deeperWrapper.vm.poses).toBe(TestData.result);
   });
 
-  // it("renders all poses", () => {
-  //   expect(document.getElementsByClassName('.alias-dropdown')).toHaveLength(TestData.length);
-  // });
+  it("renders all poses", () => {
+    expect(deeperWrapper.html()).toContain('<div id="Baby Cobra" class="alias-dropdown">');
+  });
 
 });
