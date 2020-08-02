@@ -1,4 +1,5 @@
 <template>
+<div class="center">
 	<div id="app">
 		<h1>🧘‍♂️ Yoga Sequencer</h1>
 		<p>
@@ -15,6 +16,7 @@
 			<YogaTutorial :poses="poses" />
 			<YogaPoses :poses="poses" :difficulties="difficulties" />
 		</div>
+	</div>
 	</div>
 </template>
 
@@ -54,18 +56,18 @@ export default {
 </script>
 
 <style>
+.center {
+	display: grid;
+	place-items: center;
+	width:100vw;
+}
 #app {
 	font-family: Avenir, Helvetica, Arial, sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
 	text-align: left;
 	color: #2c3e50;
-	margin: 60px auto;
+	margin-top: 60px;
 	max-width: 700px;
-	display: flex;
-	align-items: flex-start;
-	flex-direction: column;
-	position: relative;
+	width: 95vw;
 }
 .app-body {
 	margin-top: 10px;

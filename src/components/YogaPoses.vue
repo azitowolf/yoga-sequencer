@@ -25,20 +25,7 @@
 
 		<div id="pose-card-list" class="pose-card-list">
 			<div v-for="pose in outputPoses" class="pose-card" v-bind:key="pose.id">
-				<img
-					:src="createImageUrlFromRef(pose.image.asset._ref)"
-					:alt="`image of yoga pose: ${pose.name}`"
-				/>
-				<div>{{ pose.name }}</div>
-				<div v-if="showInfo.sanskrit">
-					{{ pose.sanskrit }}
-				</div>
-				<div v-if="showInfo.difficulty">
-					{{ difficultyString(pose.difficulty._ref) }}
-				</div>
-				<div v-if="showInfo.Description">
-					{{ pose.Description }}
-				</div>
+				<YogaPose :pose="pose" :showInfo="showInfo" />
 			</div>
 		</div>
 	</div>
@@ -48,11 +35,13 @@
 // import sequence data
 import demoSequences from "../assets/demosequences.json";
 import Options from "./Options";
+import YogaPose from "./YogaPose";
 
 export default {
 	name: "YogaPoses",
 	components: {
-		Options
+		Options,
+		YogaPose
 	},
 	data: function() {
 		return {
@@ -108,13 +97,6 @@ export default {
 			);
 			return matchedDifficulty.value;
 		},
-		createImageUrlFromRef: function(ref) {
-			const refParams = ref.split("-");
-			const fileType = refParams[3];
-			const imageID = refParams[1] + "-" + refParams[2];
-			const imageUrl = `https://cdn.sanity.io/images/5iv5ywr9/production/${imageID}.${fileType}`;
-			return imageUrl;
-		},
 		convertToPoses: function(poseArray = false) {
 			const sequence = document.getElementById("input").value;
 			const linesArray = poseArray || sequence.split("\n");
@@ -154,6 +136,7 @@ export default {
 #input {
 	min-height: 200px;
 	width: 100%;
+	box-sizing: border-box;
 	border: 3px solid papayawhip;
 }
 
@@ -167,6 +150,7 @@ export default {
 	align-content: flex-start;
 	border: 3px solid papayawhip;
 	padding: 10px;
+	box-sizing: border-box;
 }
 .pose-card-list:empty {
 	border: none;

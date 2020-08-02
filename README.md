@@ -16,18 +16,18 @@ https://www.notion.so/Yoga-Poses-API-fea18ff798c9435ebc5c7ec9e009d31d
 
 Backend
 * (continuous) user can access more poses in the app.
-* Publish api as it’s own website to allow ppl access
-    * https://documenter.getpostman.com/view/1251770/T17J9Saj?version=latest
+* Publish api as it’s own website to allow ppl access - DONE
+    * 
 
 Frontend
 * User can see arrows in the sequence to see which direction it goes DONE
 * User can see more information on each pose DONE
-* User can change the layout of the poses
+* User can change the layout of the poses 
 * User can print the poses (print-friendly view)
 * User can see poses in Single Column on Mobile
 * User can acces a sample set Surya C
 * User can toggle between photo sets :) ** high demand, high fun
-
+* User can see a little yoga emoj as the favicon - DONE
 
 # Learning Materials
 

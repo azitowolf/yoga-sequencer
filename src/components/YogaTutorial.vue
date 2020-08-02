@@ -88,9 +88,13 @@ export default {
 .yoga-tutorial-component pre {
 	text-align: left;
 }
+.supported-poses {
+	width: 100%;
+}
 .supported-poses-list {
 	width: 100%;
 	padding: 10px;
+	box-sizing: border-box;
 	flex-direction: column;
 	flex-wrap: wrap;
 	position: relative;
