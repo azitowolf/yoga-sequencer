@@ -19,10 +19,11 @@
 		name: "YogaPose",
 		props: {
 			pose: Object,
-			showInfo: Object
+			showInfo: Object,
+			
 		},
 	methods: {
-				createImageUrlFromRef: function(ref) {
+		createImageUrlFromRef: function(ref) {
 			const refParams = ref.split("-");
 			const fileType = refParams[3];
 			const imageID = refParams[1] + "-" + refParams[2];

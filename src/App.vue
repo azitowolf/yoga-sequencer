@@ -7,6 +7,7 @@
 			<b>visualize their practice</b> in sequence.
 		</p>
 		<a href="#yoga-tutorial-component" class="to-tutorial">Learn More</a>
+		<br>
 		<a href="#yoga-poses-component" class="to-sequencer"
 			>Take Me to the Sequencer</a
 		>
@@ -56,6 +57,9 @@ export default {
 </script>
 
 <style>
+body{
+	margin: 0px;
+}
 .center {
 	display: grid;
 	place-items: center;
@@ -68,9 +72,7 @@ export default {
 	margin-top: 60px;
 	max-width: 700px;
 	width: 95vw;
-}
-.app-body {
-	margin-top: 10px;
+	padding:5px;
 }
 button {
 	border: 3px solid papayawhip;
@@ -78,11 +80,5 @@ button {
 	font-weight: bold;
 	background-color: white;
 	margin: 0.5em;
-}
-
-@media (max-width: 500px) {
-	#app {
-		padding: 5px;
-	}
 }
 </style>
