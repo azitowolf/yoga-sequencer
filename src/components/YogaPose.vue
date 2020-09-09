@@ -6,10 +6,10 @@
 			{{ pose.sanskrit }}
 		</div>
 		<div v-if="showInfo.difficulty">
-			{{ difficultyString(pose.difficulty._ref) }}
+			{{ this.difficulty }}
 		</div>
-		<div v-if="showInfo.Description">
-			{{ pose.Description }}
+		<div v-if="showInfo.description">
+			{{ pose.description }}
 		</div>
 	</div>
 </template>
@@ -20,18 +20,18 @@
 		props: {
 			pose: Object,
 			showInfo: Object,
-			
+			difficulty:String
 		},
-	methods: {
-		createImageUrlFromRef: function(ref) {
-			const refParams = ref.split("-");
-			const fileType = refParams[3];
-			const imageID = refParams[1] + "-" + refParams[2];
-			const imageUrl = `https://cdn.sanity.io/images/5iv5ywr9/production/${imageID}.${fileType}`;
-			return imageUrl;
+		methods: {
+			createImageUrlFromRef: function(ref) {
+				const refParams = ref.split("-");
+				const fileType = refParams[3];
+				const imageID = refParams[1] + "-" + refParams[2];
+				const imageUrl = `https://cdn.sanity.io/images/5iv5ywr9/production/${imageID}.${fileType}`;
+				return imageUrl;
 			}
 		}
-	}
+	};
 </script>
 
 <style lang="scss" scoped>

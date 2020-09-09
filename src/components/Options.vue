@@ -6,7 +6,7 @@
 		<button v-on:click="toggleAdditionalInfo('difficulty')">
 			toggle difficulty
 		</button>
-		<button v-on:click="toggleAdditionalInfo('Description')">
+		<button v-on:click="toggleAdditionalInfo('description')">
 			toggle description
 		</button>
 		<button v-on:click="changeImageSet('test')">

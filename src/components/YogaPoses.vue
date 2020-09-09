@@ -19,13 +19,14 @@
 		<button v-on:click="optionsOpen = !optionsOpen">
 			Display Options
 		</button>
+
 		<div class="optionsPanel" v-if="optionsOpen">
 			<Options @toggle="toggleAdditionalInfo" />
 		</div>
 
 		<div id="pose-card-list" class="pose-card-list">
 			<div v-for="pose in outputPoses" class="pose-card" v-bind:key="pose.id">
-				<YogaPose :pose="pose" :showInfo="showInfo" />
+				<YogaPose :pose="pose" :difficulty="difficultyString(pose.difficulty._ref)" :showInfo="showInfo" />
 			</div>
 		</div>
 	</div>
@@ -51,9 +52,10 @@ export default {
 			optionsOpen: false,
 			showInfo: {
 				sanskrit: false,
-				Description: false,
+				description: false,
 				difficulty: false
-			}
+			},
+			imageSet: 1
 		};
 	},
 	props: {
