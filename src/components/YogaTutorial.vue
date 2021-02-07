@@ -3,14 +3,14 @@
 		<h2>About</h2>
 		<!-- TODO turn this into a static md file :) -->
 		<p>The idea is simple: You enter your sequence in the format below:</p>
-		<pre>
+		<pre class="typed-example">
       1. Downward facing dog
       2. Upward facing dog
       3. Mountain
       4. etc...
     </pre>
 		<p>Or you can get lazy and write the sequence more like this...</p>
-		<pre>
+		<pre class="typed-example">
       1. DFD
       2. UFD
       3. Mountain
@@ -35,7 +35,7 @@
 					v-for="pose in poses"
 					v-bind:key="pose.name"
 					:id="pose.name"
-					v-bind:class="{ open: pose.name === browsingPose }"
+					v-bind:class="{ 'alias-dropdown--open': pose.name === browsingPose }"
 				>
 					{{ pose.name }}
 					<div class="aliases-modal">
@@ -76,6 +76,7 @@ export default {
 </script>
 
 <style scoped>
+
 .yoga-tutorial-component,
 .supported-poses,
 .supported-poses-list {
@@ -85,7 +86,7 @@ export default {
 	align-items: flex-start;
 	text-align: left;
 }
-.yoga-tutorial-component pre {
+.typed-example {
 	text-align: left;
 }
 .supported-poses {
@@ -100,7 +101,6 @@ export default {
 	position: relative;
 	border: 3px solid papayawhip;
 }
-
 .aliases-modal {
 	position: absolute;
 	visibility: hidden;
@@ -108,10 +108,14 @@ export default {
 	bottom: 50%;
 	text-align: right;
 }
-.alias-dropdown.open {
+.alias-dropdown {
+	cursor:pointer;
+}
+.alias-dropdown--open {
 	font-weight: bold;
 }
-.alias-dropdown.open .aliases-modal {
+.alias-dropdown--open .aliases-modal {
 	visibility: visible;
 }
+
 </style>
