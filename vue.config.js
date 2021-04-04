@@ -5,5 +5,6 @@ module.exports = {
         data: `@import "~@/styles/global.scss";`
       }
     }
-  }
-}
+  },
+  publicPath: './'
+};
