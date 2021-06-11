@@ -57,6 +57,10 @@ export default {
 </script>
 
 <style>
+html {
+	scroll-behavior: smooth;
+}
+
 body{
 	margin: 0px;
 }
